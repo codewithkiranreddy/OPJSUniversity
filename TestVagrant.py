@@ -1,3 +1,9 @@
+#Name : Saikiran Chittireddy
+#College : OPJS University
+#Year of passout : 2022
+#Contact No : 8520959890
+#Email ID : codewithkiranreddy@gmail.com
+
 class PlanetaryData:
   def __init__(self, planets):
     self.planets = planets
