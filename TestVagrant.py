@@ -17,18 +17,22 @@ class PlanetaryData:
     print(count)
 
   def findGas(self):
-    gas = set()
+    unq_gas = set()
+    gas = []
     for planet in self.planets:
-      gas.update(set(planet["gasses"]))
+      unq_gas.update(set(planet["gasses"]))
+      gas.extend(planet["gasses"])
     
-    result = ''
     gasses_count = 0
-    for each_gas in gas:
-      for planet in self.planets:
-        gas_count = planet["gasses"].count(each_gas)
-        if gas_count > gasses_count:
-          gasses_count = gas_count
-          result = each_gas
+    for each_gas in unq_gas:
+      if gas.count(each_gas) > gasses_count:
+        gasses_count = gas.count(each_gas)
+    
+    result = []
+    for each_gas in unq_gas:
+      if gas.count(each_gas) == gasses_count:
+        result.append(each_gas)
+    
     print(result)
 
 
